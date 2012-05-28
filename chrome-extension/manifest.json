@@ -1,0 +1,23 @@
+{
+    "name": "Grove.io",
+    "version": "1.0.0",
+
+    "description": "Add desktop notifications to Grove.io's web client",
+    "homepage_url": "https://grove.io",
+    "icons": {
+        "16": "img/icon16.png",
+        "48": "img/icon48.png",
+        "128": "img/icon128.png"
+    },
+    "permissions": [
+      "tabs",
+      "notifications"
+    ],
+    
+    "background_page": "background.html",
+    
+    "content_scripts": [{
+        "js": ["contentscript.js"],
+        "matches": ["https://grove.io/*"]
+    }]
+}
