@@ -9,7 +9,7 @@ window.onload = function() {
                 msg.body
             );
             notification.ondisplay = function() {
-                setTimeout(function(){notification.cancel()}, 4000);
+                setTimeout(function(){notification.cancel()}, 15000);
             };
             notification.onclick = function() {
                 chrome.tabs.query({ url: '*://grove.io/*' }, function(tabs) {
