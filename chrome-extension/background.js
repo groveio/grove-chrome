@@ -8,10 +8,17 @@ window.onload = function() {
                 msg.title,
                 msg.body
             );
-            notification.show();
             notification.ondisplay = function() {
                 setTimeout(function(){notification.cancel()}, 4000);
-            }
+            };
+            notification.onclick = function() {
+                chrome.tabs.query({ url: '*://grove.io/app/*' }, function(tabs) {
+                    chrome.tabs.update(tabs[0].id, { highlighted: true }, function() {
+                        // tab updated. :)
+                    });
+                });
+            };
+            notification.show();
         });
     });
 };
